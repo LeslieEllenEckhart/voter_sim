@@ -1,5 +1,5 @@
-# main module for voter simulation
-# 
-begin
+# # main module for voter simulation
+# # 
+# begin
     
-end
+# end

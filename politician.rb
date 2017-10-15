@@ -1,6 +1,8 @@
 # Class for a "politician" for voter simulation
 # 
-class politician do
+class Politician < Person
+    
+    attr_accessor :political_affiliation
     
     
     
