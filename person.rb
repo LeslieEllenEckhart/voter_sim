@@ -20,7 +20,7 @@ class Person
     end
     
     def person_name
-        puts = "Person is named #{@@name}."
+        person_name = "Person is named #{@@name}."
     end
     
     def name_update(new_name)
@@ -34,3 +34,9 @@ class Person
     end 
     
 end # end of Person class
+
+
+
+
+
+

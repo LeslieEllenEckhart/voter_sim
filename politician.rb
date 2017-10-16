@@ -9,26 +9,33 @@
 
 class Politician < Person
     
-    attr_accessor :political_affiliation
+    attr_accessor :registered_party
+    
+    @@political_affiliation = " "
       
-    def initialization(name, party)
-        if name == " " 
-            raise ArgumentError
-        else
-            @politician_name = name
-            @@name = @politician_name
-        end
-        
+    def initialize(name, party)
+         super(name)
         if party == " "
-            @political_affiliation = "None"
-        else
-            @political_affiliation = party
+            @registered_party = "None"
+            @@political_affiliation = @registered_party
+        else     
+            @registered_party = party
+            @@political_affiliation = @registered_party
         end
-        
     end
     
+    def affiliation
+        affiliation = "Affiliation is #{@@political_affiliation}."
+    end 
     
-    
-    
+    def affiliation_update(new_party)
+        if new_party == " "
+            raise ArgumentError
+        else
+            @registered_party = new_party
+            @@political_affiliation = @registered_party
+            affiliation_update = "Affiliation is #{@@political_affiliation}."
+        end
+    end 
     
 end
