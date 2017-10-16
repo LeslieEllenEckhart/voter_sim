@@ -1,32 +1,32 @@
 # Class for a "voter" for voter simulation
 # 
 class Voter < Person
-    attr_accessor :political_party
+    attr_accessor :political_affiliation
    
-    @@party_registration = " "
+    @@political_view = " "
       
-    def initialize(name, party)
+    def initialize(name, politics)
         super(name)
-        if party == " "
-            @party_choice = "None"
-            @@party_registration = @party_choice
+        if politics == " "
+            @political_affiliation = "None"
+            @@political_view = @political_affiliation
         else     
-            @party_choice = party
-            @@party_registration = @party_choice
+            @political_affiliation = politics
+            @@political_view = @political_affiliation
         end
     end
     
-    def party_registration
-        party_registration = "Party registration is #{@@party_registration}."
+    def political_affiliation
+        political_affiliation = "Political affiliation is #{@@political_view}."
     end 
     
-    def party_update(new_party)
-        if new_party == " "
+    def affiliation_update(new_affiliation)
+        if new_affiliation == " "
             raise ArgumentError
         else
-            @party_choice = new_party
-            @@party_registration = @party_choice
-            party_update = "New party registration is #{@@party_registration}."
+            @new_affiliation = new_affiliation
+            @@political_view = @new_affiliation
+            affiliation_update = "New political affiliation is #{@@political_view}."
         end
     end 
     

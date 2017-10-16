@@ -11,30 +11,30 @@ class Politician < Person
     
     attr_accessor :registered_party
     
-    @@political_affiliation = " "
+    @@party_affiliation = " "
       
     def initialize(name, party)
-         super(name)
+        super(name)
         if party == " "
             @registered_party = "None"
-            @@political_affiliation = @registered_party
+            @@party_affiliation = @registered_party
         else     
             @registered_party = party
-            @@political_affiliation = @registered_party
+            @@party_affiliation = @registered_party
         end
     end
     
-    def affiliation
-        affiliation = "Affiliation is #{@@political_affiliation}."
+    def party
+        party = "Party affiliation is #{@@party_affiliation}."
     end 
     
-    def affiliation_update(new_party)
+    def party_update(new_party)
         if new_party == " "
             raise ArgumentError
         else
             @registered_party = new_party
-            @@political_affiliation = @registered_party
-            affiliation_update = "Affiliation is #{@@political_affiliation}."
+            @@party_affiliation = @registered_party
+            affiliation_update = "Party affiliation is #{@@party_affiliation}."
         end
     end 
     

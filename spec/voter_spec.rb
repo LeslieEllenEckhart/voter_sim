@@ -3,20 +3,20 @@ require './voter.rb'
 # describe the classname
 describe Voter do
 
-    it "is created with a name and party designation" do
-        voter = Voter.new("Dr. Seuss", "Democrat")
+    it "is created with a name and political affiliation" do
+        voter = Voter.new("Dr. Seuss", "Liberal")
         expect(voter).to be_a(Person)
         expect(voter).to be_a(Voter)
     end
     
-    it "can report its party registration" do
-        voter = Voter.new("Dr. Seuss", "Democrat")
-        expect(voter.party_registration).to eq("Party registration is Democrat.")
+    it "can report its political affiliation" do
+        voter = Voter.new("Dr. Seuss", "Liberal")
+        expect(voter.political_affiliation).to eq("Political affiliation is Liberal.")
     end
     
-    it "can update their party registration" do
-        voter = Voter.new("Dr. Suess", "Democrat")
-        expect(voter.party_update("Green")).to eq("New party registration is Green.")
+    it "can update their political affiliation" do
+        voter = Voter.new("Dr. Suess", "Liberal")
+        expect(voter.affiliation_update("Socialist")).to eq("New political affiliation is Socialist.")
     end    
 
     it "can be added to the Local Registration List" do
