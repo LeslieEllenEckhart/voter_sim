@@ -1,7 +1,11 @@
 # Class for a "voter" for voter simulation
+#
 # 
+require './person.rb'
+
 class Voter < Person
     attr_accessor :political_affiliation
+    attr_accessor :name
    
     @@political_view = " "
       
@@ -15,7 +19,11 @@ class Voter < Person
             @@political_view = @political_affiliation
         end
     end
-    
+
+    def name   
+        name  = "#{@@name}"
+    end  
+   
     def political_affiliation
         political_affiliation = "Political affiliation is #{@@political_view}."
     end 
