@@ -3,10 +3,14 @@ require './records.rb'
 describe Records do
 
     # 1. Test instantiantion of records
-    it "is created"
+#     it "is can create a record" do
+#     end
 
     # 2. Test creation of voter.
-    it "can create a voter record"
+    it "can create a voter record" do
+        voter_list =  Records.new
+        politician_list = Records.new
+    end
 
     # 3. Test creation of politician record.
     it "can create a policitian record"
