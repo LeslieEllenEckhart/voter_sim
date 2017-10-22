@@ -1,6 +1,9 @@
+# Rubyist:  Leslie E. Eckhart
+# I-O Avenue, Highway - Fall 2017 cohort
+# Project-3: Voter Simulation
+# 
 # Class for a "voter" for voter simulation
 #
-# 
 require './person.rb'
 
 class Voter < Person
@@ -24,8 +27,8 @@ class Voter < Person
         name  = "#{@@name}"
     end  
    
-    def political_affiliation
-        political_affiliation = "Political affiliation is #{@@political_view}."
+    def politics
+        politics = "#{@@political_view}"
     end 
     
     def affiliation_update(new_affiliation)
@@ -34,7 +37,7 @@ class Voter < Person
         else
             @new_affiliation = new_affiliation
             @@political_view = @new_affiliation
-            affiliation_update = "New political affiliation is #{@@political_view}."
+            affiliation_update = "Updated political affiliation is #{@@political_view}."
         end
     end 
     

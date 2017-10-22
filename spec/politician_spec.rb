@@ -15,12 +15,12 @@ describe Politician do
     
     it "can report its party affiliation" do
         politician = Politician.new("Joe Kennedy", "Democrat")
-        expect(politician.party).to eq("Party affiliation is Democrat.")
+        expect(politician.party).to eq("Democrat")
     end
     
     it "can update its party affiliation" do
        politician = Politician.new("Joe Kennedy", "Democrat")
-       expect(politician.party_update("Green")).to eq("Party affiliation is Green.")
+       expect(politician.party_update("Green")).to eq("Green")
     end    
 
     it "can be added to the Local Registration List" do

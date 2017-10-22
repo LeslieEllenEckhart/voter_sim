@@ -23,9 +23,13 @@ class Politician < Person
             @@party_affiliation = @registered_party
         end
     end
+       
+    def name   
+        name  = "#{@@name}"
+    end 
     
     def party
-        party = "Party affiliation is #{@@party_affiliation}."
+        party = "#{@@party_affiliation}"
     end 
     
     def party_update(new_party)
@@ -34,7 +38,7 @@ class Politician < Person
         else
             @registered_party = new_party
             @@party_affiliation = @registered_party
-            affiliation_update = "Party affiliation is #{@@party_affiliation}."
+            affiliation_update = "#{@@party_affiliation}"
         end
     end 
     
