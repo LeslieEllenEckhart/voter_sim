@@ -36,7 +36,7 @@ describe Records do
     end
 
     # 3. Test creation of politician record.
-    it "can create a policitian record" do
+    it "can create a policitian record and add to the policitian registry" do
         leon_politicians = Records.new("P")
         politician1 = Politician.new("Joe Kennedy", "Democrat")
         leon_politicians.add_politician(politician1)
@@ -46,7 +46,7 @@ describe Records do
     end
 
     # 4. Test reporting on list of all voters. 
-    it "can list all voters in the registry" do
+    it "can list all voters and politicians in the registry" do
         leon_voters = Records.new("V")
         voter1 = Voter.new("Dr. Seuss", "Liberal")
         leon_voters.add_voter(voter1)
@@ -56,12 +56,11 @@ describe Records do
         expect(self.list.results).to eq("Voter: Dr. Seuss, Liberal", "Voter: Sir Lancelot, Conservative", "Politician: Joe Kennedy, Conservative")
     end
 
-    # 5. Test reporting on list of all politicians.
-    it "can list all politicians in the registry"  do
-        leon_politicians = Records.add_politician("Joe Kennedy", "Democrat")
+    it "can search for a voter by name"
     
-    end
-
+    
+    it "search for a politician by name"
+    
     # 6. Test update of a voter.
     it "can update a voter in the registry"
 

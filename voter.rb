@@ -8,19 +8,18 @@ require './person.rb'
 
 class Voter < Person
     attr_accessor :political_affiliation
-    attr_accessor :name
-      
+       
     def initialize(name, politics)
         super(name)
         if politics == " "
             @political_affiliation = "None"
-          else     
+        else     
             @political_affiliation = politics
-          end
+        end
     end
 
     def name   
-        name  = "#{@@name}"
+        name  = "#{@name}"
     end  
    
     def politics

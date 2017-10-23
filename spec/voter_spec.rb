@@ -9,7 +9,7 @@ describe Voter do
         expect(voter).to be_a(Voter)
     end
     
-    it "can report its name" do
+    it "can report its name" do # Did we properly inherit name?
         voter = Voter.new("Dr. Seuss", "Liberal")
         expect(voter.name).to eq("Dr. Seuss")
     end

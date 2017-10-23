@@ -7,20 +7,18 @@
 # 
 class Person
     
-    attr_accessor :person_name
-    @@name = " "
+    attr_accessor :name
     
     def initialize(name)
         if name == " "
            raise ArgumentError
         else
-           @person_name = name
-           @@name = @person_name
+           @name = name
         end
     end
     
     def person_name
-        person_name = "Person is named #{@@name}."
+        person_name = "Person is named #{@name}."
     end
     
     def name_update(new_name)
@@ -28,8 +26,7 @@ class Person
             raise ArgumentError
         else
             @person_name = new_name
-            @@name = @person_name
-            puts = "Person is named #{@@name}."
+            puts = "Person is named #{@name}."
         end
     end 
     

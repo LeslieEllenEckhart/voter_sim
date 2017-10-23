@@ -9,8 +9,12 @@ require './politician.rb'
 describe Politician do
     it "is created with a name and party affiliation" do
         politician = Politician.new("Joe Kennedy", "Democrat")
-        expect(politician).to be_a(Person)
         expect(politician).to be_a(Politician)
+    end
+    
+    it "can report its name" do
+        politician = Politician.new("Joe Kennedy", "Democrat")
+        expect(politician.name).to eq("Joe Kennedy")
     end
     
     it "can report its party affiliation" do

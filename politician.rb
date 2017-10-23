@@ -10,10 +10,9 @@
 class Politician < Person
     
     attr_accessor :registered_party
-    attr_accessor :name
-      
+         
     def initialize(name, party)
-        name = super(name)
+        super(name)
         if party == " "
             @registered_party = "None"
         else     
