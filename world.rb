@@ -8,7 +8,7 @@ require './politician.rb'
 require './records.rb'
 
 require './world_setup.rb'
-# require './print_lists.rb'
+require './print_lists.rb'
 require './world_verbiage.rb'
 
 #
@@ -65,9 +65,9 @@ end
 
 # Set-up for Voter Simulation:
 
-WorldSetUp.voter_politician_arrays_init
+politician_roll, voter_roll = WorldSetUp.voter_politician_arrays_init
 #
-PrintLists.print_lists
+PrintLists.print_lists(politician_roll, voter_roll)
 #
 # puts the intro and questions
 # puts options C R U D

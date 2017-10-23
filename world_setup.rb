@@ -15,6 +15,7 @@ module WorldSetUp
      leon_politicians = Records.new(@list_type)
      puts leon_voters
      puts leon_politicians
+     return leon_politicians, leon_voters
  end
 #  module_function :voter_politician_arrays_init
     

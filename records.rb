@@ -21,19 +21,17 @@ class Records
         @list_type = list_type
         puts "This is the list_type: #{@list_type}"
         
-        if @list_type != ("V" or "P")
+#         if !["V","P"].include?(@list_type)
+        if @list_type != "V" and @list_type != "P"
+#         if @list_type != ("V" and "P")
             puts "OOOOPS!!  Error coming!!!!!!!!!!!!!!!"
             raise ArgumentError
         end
         
         if @list_type == "V"
-            @voter_registry = []  
-#             @@voter_registry = @voter_list
-            return @voter_registry
+            @voter_list = []  
         else # list_type == "P"
-            @political_registry = []
-#             @@political_registry = @politician_list
-#             return @@political_registry
+            @politician_list = []
         end
     end
 #
