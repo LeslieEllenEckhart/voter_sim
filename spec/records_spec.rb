@@ -30,7 +30,7 @@ describe Records do
         records  = Records.new("V")
         records.create_voter("Dr. Seuss", "Liberal")
         
-        expect(records.voters.count).to eq(1)
+        expect(records.voters_list.count).to eq(1)
         
 #         leon_voters = Records.new("V")
 #         voter1 = Voter.new("Dr. Seuss", "Liberal")
@@ -91,21 +91,48 @@ describe Records do
         index_for_existing_voter = records.search_voter("James Bond")
         expect(index_for_nonexisting_voter).to eq(1)
         expect(index_for_nonexisting_voter).to eq(nil)
-        
-    
+   
     end
     
-    
-    it "search for a politician by name"
-    
+    it "can search for a politician by name" do
+        records  = Records.new("V")
+        records.create_politician("JFK", "Democrat")
+        records.create_politician("RFK", "Independent")
+        records.create_politician("Reagan", "Republican")
+        #need index of an existingpolitician
+        index_for_existing_politician = records.search_politician("RFK")
+        #need to see if not found, index is nil
+        index_for_existing_politician = records.search_politician("Jane Bond")
+        expect(index_for_nonexisting_politician).to eq(1)
+        expect(index_for_nonexisting_politician).to eq(nil)
+   
+    end
+        
     # 6. Test update of a voter.
-    it "can update a voter in the registry"
+    it "can update a voter in the registry" do
+         records  = Records.new("V")
+         records.create_voter("Dr. Seuss", "Liberal")
+         records.create_voter("Lindsay Lohan", "Socialist")
+        # search by first arg and update with 2nd and 3rd args
+         records.update_voter("Dr. Seuss", "Jimmy John", "Neutral")
+        expect(record.voter_list[0].name).to eq("Jimmy John")
+        expect(record.voter_list[0].political_affiliation).to eq("Neutral")
+    end
 
     # 7. Test update of a politician.
     it "can update a politician in the registry"
 
     # 8. Test deletion of a voter.
-    it "can delete a voter from the registry"
+    it "can delete a voter from the registry" do
+        records  = Records.new("V")
+         records.create_voter("Dr. Seuss", "Liberal")
+         records.create_voter("Lindsay Lohan", "Socialist")
+        
+        expect(records.voters.count).to eq(1)
+        records.delete_voter("Lindsay Lohan")
+        expect(record.search_voter("Lindsay Lohan")).to eq(nil)
+
+    end
   
     # 9. Test deletion of a politician.
     it "can delete a politician from the registry"

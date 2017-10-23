@@ -18,9 +18,9 @@ describe Person do
       expect(person.person_name).to eq("Person is named Delaney.")
   end
     
-  it "can update its name" do
-      person = Person.new("Delaney")
-      expect(person.name_update("Maia")).to eq("Person is named Maia.")
-  end    
+#   it "can update its name" do
+#       person = Person.new("Delaney")
+#       expect(person.name_update("Maia")).to eq("Person is named Maia.")
+#   end    
 
 end

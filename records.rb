@@ -64,7 +64,10 @@ class Records
     def search_voter(name)
         index = @voter_list.index{ |voter| voter.name == name }  
     end
-    
+    # enumeration to run thru array to find the index
+    def search_politician(name)
+        index = @politician_list.index{ |politician| politician.name == name }  
+    end
 #
 #      Must use "self." for methods that modify @@class variables!
     def add_voter(voter1)
@@ -75,20 +78,30 @@ class Records
         @politician_list.push(politician1)
     end
     
-    def update_voter(name)
-        
-        # will need to search to find 
+    def update_voter(old_name, new_name, new_affiliation)
+        index = search_voter(old_name)
+        if index != nil
+           @voter_list[index].name = new_name
+           @voter_list[index].political_affiliation = new_affiliation     
+        end
     end
 
     def update_pol(name)
     end
   
     def delete_pol(name)
+        
         #  array.delete_at(2) using index value
         #  array.delete("element")
     end
     
     def delete_voter(name)
+        index = search_voter(name)
+        
+        if index != nil
+            @voter_list.delete_at(index)
+        end
+        
         #  array.delete_at(2) using index value
         #  array.delete("element")
     end
