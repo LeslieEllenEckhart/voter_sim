@@ -10,11 +10,13 @@ module WorldSetUp
      attr_accessor :leon_politicians
      
      @list_type = "V"
-     leon_voters = Records.new(@list_type)
+#      leon_voters = Records.new(@list_type).voter_list
+        leon_voters = Records.new(@list_type)
      @list_type = "P"
-     leon_politicians = Records.new(@list_type)
-     puts leon_voters
-     puts leon_politicians
+#      leon_politicians = Records.new(@list_type).politician_list
+        leon_politicians = Records.new(@list_type)
+#      puts leon_voters
+#      puts leon_politicians
      return leon_politicians, leon_voters
  end
 #  module_function :voter_politician_arrays_init

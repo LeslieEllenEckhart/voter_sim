@@ -61,29 +61,78 @@ if choice_2 != ("A" "a" "B" "b")
    choice_2 = "A"
 end
 
-# puts choice_2
+puts "You chose: #{choice_2}"
 
-# Set-up for Voter Simulation:
+# Set-up for the lists by creating instances of both:
 
-politician_roll, voter_roll = WorldSetUp.voter_politician_arrays_init
-#
-PrintLists.print_lists(politician_roll, voter_roll)
-#
-# puts the intro and questions
-# puts options C R U D
+politician_records, voter_records = WorldSetUp.voter_politician_arrays_init
+
+# Now in here we need to prompt for adding either a voter or politician
+
+if choice_1 == "1"
+    puts "Please type the full name of the voter you wish to add:"
+    v_name = gets.chomp
+    puts "Voters also need a political affiliation from the following choices:"
+    puts "C-Conservative, L-Liberal, N-Neutral, S-Socialist or T-Tea Party"
+    puts "Next, please type the Letter for the voter's political affiliation:"
+    v_pol = gets.chomp
+    case v_pol
+        when "C"  
+            v_politics = "Conservative"
+        when "L"
+            v_politics = "Liberal"
+        when "N"
+            v_politics = "Neutral"
+        when "S"
+            v_politics = "Socialist"
+        when "T"
+            v_politics = "Tea Party"
+        else
+            v_politics = v_pol
+    end  
+    voter = Voter.new(v_name, v_politics)
+    puts "Your voter is: #{voter.name} / #{voter.politics} of class: #{voter.class}"
+    voter_records.add_voter(voter)
+    puts "Voter List is of class: #{voter_records.class}"
+else # Otherwise this is a politician
+    puts "Please type the full name of the politician you wish to add:"
+    p_name = gets.chomp
+    puts "Politicians also need a political party from the following choices:"
+    puts "D-Democrat, G-Green, I-Independent or R-Republican"
+    puts "Next, please type the Letter for the politican's political party:"
+    p_pty = gets.chomp
+    case p_pty
+        when "D"
+            p_party = "Democrat"
+        when "G"
+            p_party = "Green"
+        when "I"
+            p_party = "Independent"
+        when "R"
+            p_party = "Republican"
+        else
+            p_party = p_pty
+    end
+    politician = Politician.new(p_name, p_party)
+    puts "Your politician is: #{politician.name} / #{politician.party} of class: #{politician.class}"
+    politician_records.add_politician(politician)
+    puts "Politician List is of class: #{voter_records.class}"
+end
+
+PrintLists.print_lists(politician_records.politician_list, voter_records.voter_list)
+
+# PrintLists.print_lists(politician_records.politician_list, voter_records.voter_list)
+
+# close our World
+puts " "
+puts "**************************"
+puts "  Thank you!  Good Night"
+puts "**************************"
+puts " "
 
 
 
 
 
 
-
-
-# user_input = gets.chomp
-# case user_input
-#     when "C"
-#         voter_records.create_voters
-#     when "L"
-#         records.list_all_voters
-#         records
     

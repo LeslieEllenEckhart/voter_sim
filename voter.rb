@@ -9,18 +9,14 @@ require './person.rb'
 class Voter < Person
     attr_accessor :political_affiliation
     attr_accessor :name
-   
-    @@political_view = " "
       
     def initialize(name, politics)
         super(name)
         if politics == " "
             @political_affiliation = "None"
-            @@political_view = @political_affiliation
-        else     
+          else     
             @political_affiliation = politics
-            @@political_view = @political_affiliation
-        end
+          end
     end
 
     def name   
@@ -28,7 +24,7 @@ class Voter < Person
     end  
    
     def politics
-        politics = "#{@@political_view}"
+        politics = "#{@political_affiliation}"
     end 
     
     def affiliation_update(new_affiliation)
@@ -36,8 +32,7 @@ class Voter < Person
             raise ArgumentError
         else
             @new_affiliation = new_affiliation
-            @@political_view = @new_affiliation
-            affiliation_update = "Updated political affiliation is #{@@political_view}."
+            affiliation_update = "Updated political affiliation is #{@political_view}."
         end
     end 
     

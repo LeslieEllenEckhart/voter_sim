@@ -10,8 +10,6 @@ class Records
     attr_accessor :name
     attr_accessor :politics
     attr_accessor :party
-    attr_accessor :voter1 
-    attr_accessor :politician1
     attr_accessor :list_type
     attr_accessor :listing
     attr_accessor :voter_list
@@ -19,7 +17,7 @@ class Records
              
     def initialize(list_type)
         @list_type = list_type
-        puts "This is the list_type: #{@list_type}"
+#         puts "This is the list_type: #{@list_type}"
         
 #         if !["V","P"].include?(@list_type)
         if @list_type != "V" and @list_type != "P"
@@ -37,13 +35,11 @@ class Records
 #
 #      Must use "self." for methods that modify @@class variables!
     def add_voter(voter1)
-       @voter_list.push(@voter1)
+       @voter_list.push(voter1)
     end
 #
-#      Must use "self." for methods that modify @@class variables!
-    def self.add_politician(name, party)
-        @politician1 = Politician.new(name, party)
-        @@political_registry.push(@politician1)
+    def add_politician(politician1)
+        @politician_list.push(@politician1)
     end
     
     def self.list(list_type)
