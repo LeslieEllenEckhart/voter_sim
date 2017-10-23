@@ -1,8 +1,21 @@
-module
-# Load both the Voter and Politician registration lists:    
-#     voter_registration_list = RegistrationList.new("Orlando", "Voters")
+module WorldSetUp
+    require './records'
+# Create both the Voter and Politician registration lists:    
 
-  voter_list = []
-    
+ def self.voter_politician_arrays_init
+     attr_accessor :list_type
+     attr_accessor :voter_list
+     attr_accessor :politician_list
+     attr_accessor :leon_voters
+     attr_accessor :leon_politicians
+     
+     @list_type = "V"
+     leon_voters = Records.new(@list_type)
+     @list_type = "P"
+     leon_politicians = Records.new(@list_type)
+     puts leon_voters
+     puts leon_politicians
+ end
+#  module_function :voter_politician_arrays_init
     
 end

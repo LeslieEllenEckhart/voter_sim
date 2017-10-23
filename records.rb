@@ -1,38 +1,45 @@
+class Records 
+
 # Rubyist:  Leslie E. Eckhart
 # I-O Avenue, Highway - Fall 2017 cohort
 # Project-3: Voter Simulation
 # 
 # Class for a "voter" for voter simulation
 #
-class Records
-    require './person.rb'
-    require './voter.rb'
-    require './politician.rb'
-    
+       
     attr_accessor :name
     attr_accessor :politics
     attr_accessor :party
     attr_accessor :voter1 
     attr_accessor :politician1
     attr_accessor :list_type
-        
-    @@political_registry = []
-    @@voter_registry = []    
-       
+    attr_accessor :listing
+    attr_accessor :voter_list
+    attr_accessor :politician_list
+             
     def initialize(list_type)
-        if list_type == "V"
-            @voter_list = []
-            @@voter_registry = @voter_list
-        else
-            @politician_list = []
-            @@political_registry = @politician_list
+        @list_type = list_type
+        puts "This is the list_type: #{@list_type}"
+        
+        if @list_type != ("V" or "P")
+            puts "OOOOPS!!  Error coming!!!!!!!!!!!!!!!"
+            raise ArgumentError
+        end
+        
+        if @list_type == "V"
+            @voter_registry = []  
+#             @@voter_registry = @voter_list
+            return @voter_registry
+        else # list_type == "P"
+            @political_registry = []
+#             @@political_registry = @politician_list
+#             return @@political_registry
         end
     end
 #
 #      Must use "self." for methods that modify @@class variables!
-    def self.add_voter(name, politics)
-        @voter1 = Voter.new(name,politics)
-        @@voter_registry.push(@voter1) 
+    def add_voter(voter1)
+       @voter_list.push(@voter1)
     end
 #
 #      Must use "self." for methods that modify @@class variables!
@@ -41,17 +48,20 @@ class Records
         @@political_registry.push(@politician1)
     end
     
-    def list
-        results = " "
-        voter.each do |voter|
-            results += "Voter: #{voter.name}, #{voter.aff}\n"
+    def self.list(list_type)
+        @listing = " "
+        if list_type == ("V" or "B")
+            @@voter_registry.each do |voter|
+               @listing += "Voter: #{voter.name}, #{voter.politics}\n"
+            end
         end
-        
-        politician.each do |pol|
-            results += "Politician: #{Politician.name}, #{Politician.party}\n"
-        end
-        
-        return results  # in main puts records.list
+        if list_type == ("P" or "B")
+            @@political_registry.each do |pol|
+               @listing += "Politician: #{pol.name}, #{pol.party}\n"
+            end
+        end   
+        @@results = @listing
+        return @@results  # in main puts records.list
     end
 #     show :   voter johndoe, liberal
 #                  pol, johndoe2, repub
@@ -83,6 +93,11 @@ class Records
   
     def delete_pol
         #  array.delete_at(2) using index value
-
+        #  array.delete("element")
+    end
+    
+    def delete_voter
+        #  array.delete_at(2) using index value
+        #  array.delete("element")
     end
 end

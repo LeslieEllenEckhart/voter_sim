@@ -1,4 +1,4 @@
-# # Rubyist:  Leslie E. Eckhart
+ # # Rubyist:  Leslie E. Eckhart
 # # I-O Avenue, Highway - Fall 2017 cohort
 # # Project-3: Voter Simulation
 # # 
@@ -21,7 +21,9 @@
 
 # #   it "can add a registered member" do
 # #   end
-    # Rubyist:  Leslie E. Eckhart
+# 
+# 
+#  # Rubyist:  Leslie E. Eckhart
 # # I-O Avenue, Highway - Fall 2017 cohort
 # # Project-3: Voter Simulation
 # # 

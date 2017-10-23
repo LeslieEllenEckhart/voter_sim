@@ -20,7 +20,9 @@
 #         @type = type
         
 #         if @type == "Voters"
-#             @location = []# Rubyist:  Leslie E. Eckhart
+#             @location = []
+#             
+# # Rubyist:  Leslie E. Eckhart
 # # I-O Avenue, Highway - Fall 2017 cohort
 # # Project-3: Voter Simulation
 # # 
@@ -39,7 +41,9 @@
 #             raise ArgumentError
 #         end
 #         @location = location
-#         @type = type# Rubyist:  Leslie E. Eckhart
+#         @type = type
+#         
+# # Rubyist:  Leslie E. Eckhart
 # # I-O Avenue, Highway - Fall 2017 cohort
 # # Project-3: Voter Simulation
 # # 
@@ -94,18 +98,8 @@
 #             @@registration_type = @type
 #             @@registration_location [@@registration_type]
 #         end
-        
-#         def list_type 
-            
-        
-        
-#     end
-    
-# end
-    
-            
-            
-    
+   end
+   
         
 #     else
 #             @location = location
@@ -113,11 +107,6 @@
 #             @@registration_type = @type
 #             @@registration_location [@@registration_type]
 #         end
-        
-#         def list_type 
-            
-        
-        
 #     end
     
 # end
