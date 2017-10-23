@@ -13,7 +13,7 @@ class Politician < Person
     attr_accessor :name
       
     def initialize(name, party)
-        super(name)
+        name = super(name)
         if party == " "
             @registered_party = "None"
         else     
@@ -21,7 +21,7 @@ class Politician < Person
         end
     end
        
-    def name   
+    def name 
         name  = "#{@@name}"
     end 
     

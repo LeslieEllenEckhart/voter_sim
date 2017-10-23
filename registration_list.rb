@@ -98,7 +98,7 @@
 #             @@registration_type = @type
 #             @@registration_location [@@registration_type]
 #         end
-   end
+#    end
    
         
 #     else

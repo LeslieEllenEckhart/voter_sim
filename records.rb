@@ -39,58 +39,23 @@ class Records
     end
 #
     def add_politician(politician1)
-        @politician_list.push(@politician1)
+        @politician_list.push(politician1)
     end
     
-    def self.list(list_type)
-        @listing = " "
-        if list_type == ("V" or "B")
-            @@voter_registry.each do |voter|
-               @listing += "Voter: #{voter.name}, #{voter.politics}\n"
-            end
-        end
-        if list_type == ("P" or "B")
-            @@political_registry.each do |pol|
-               @listing += "Politician: #{pol.name}, #{pol.party}\n"
-            end
-        end   
-        @@results = @listing
-        return @@results  # in main puts records.list
-    end
-#     show :   voter johndoe, liberal
-#                  pol, johndoe2, repub
-#    
-#     def list all voters and poli     
-#         voters_pol +=     (append them to make a string output)
+    def update_voter(name)
         
-#         for loop all voters in array
-#             results = " "
-#             for name (rubyflow slide 29)
-            
-#                 voters.each do |voter|
-#                     results += "voter: "
-#                     results += voter.name
-#                     results += ", "
-#                     results += voter.affil
-#                     results += "\n"
-                    
-#                     -or0-
-#                         results += "voter, #{voter.name}, #{voter.aff}\n"
-            
-        
-    def update_voter 
         # will need to search to find 
     end
 
-    def update_pol
+    def update_pol(name)
     end
   
-    def delete_pol
+    def delete_pol(name)
         #  array.delete_at(2) using index value
         #  array.delete("element")
     end
     
-    def delete_voter
+    def delete_voter(name)
         #  array.delete_at(2) using index value
         #  array.delete("element")
     end
