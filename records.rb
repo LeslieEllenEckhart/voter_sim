@@ -1,3 +1,6 @@
+require './voter.rb'
+require './politician.rb'
+
 class Records 
 
 # Rubyist:  Leslie E. Eckhart
@@ -7,11 +10,11 @@ class Records
 # Class for a "voter" for voter simulation
 #
        
-    attr_accessor :name
-    attr_accessor :politics
-    attr_accessor :party
-    attr_accessor :list_type
-    attr_accessor :listing
+#     attr_accessor :name
+#     attr_accessor :politics
+#     attr_accessor :party
+#     attr_accessor :list_type
+#     attr_accessor :listing
     attr_accessor :voter_list
     attr_accessor :politician_list
              
@@ -32,6 +35,36 @@ class Records
             @politician_list = []
         end
     end
+    
+    def create_voter(name,political_affiliation)
+        voter = Voter.new(name,political_affiliation)
+        @voter_list.push(voter)
+    end
+    
+    def create_politician(name, party_affiliation)
+        voter = Politician.new(name, party_affiliation)
+        @politician_list.push(politician)
+    end
+    
+    def list
+        results = ""
+    
+        @voter_list.each do |voter|
+            results += "Voter, #{voter.name}, #{voter.political_affiliation}\n"
+        end
+        
+        @politician_list.each do |politician|
+            results += "Politician, #{politician.name}, #{policician.party_affiliation}"
+        end
+        
+        return results
+            
+    end
+    # enumeration to run thru array to find the index
+    def search_voter(name)
+        index = @voter_list.index{ |voter| voter.name == name }  
+    end
+    
 #
 #      Must use "self." for methods that modify @@class variables!
     def add_voter(voter1)
