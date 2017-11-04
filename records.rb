@@ -5,6 +5,7 @@
 # Class for the arrays of voters and politicians for voter simulation
 #
 
+require './person.rb'
 require './voter.rb'
 require './politician.rb'
 
@@ -40,16 +41,22 @@ class Records
         @politician_list.push(politician)
     end
     
-    def list
+    def list_voters
         results = " "
-    
-        @voter_list.each do |voter|
-            results += "Voter, #{voter.name}, #{voter.political_affiliation}\n"
-        end
         
-        @politician_list.each do |politician|
-            results += "Politician, #{politician.name}, #{policician.registered_party}"
-        end
+        @voter_list.each { |voter|
+            results += "Voter, #{voter.name}, #{voter.political_affiliation}\n"
+            }
+          
+        return results
+    end
+    
+    def list_politicians
+        results = " "
+        
+        @politician_list.each { |politician|
+            results += "Politician, #{politician.name}, #{politician.registered_party}\n"
+            }
         
         return results
     end
@@ -88,7 +95,7 @@ class Records
         end
      end
     
-    def delete_pol(name)
+    def delete_politician(name)
         index = search_politician(name)
         
         if index != nil

@@ -30,15 +30,15 @@ describe Records do
     # 3. Test reporting on list of all voters. 
     it "can list all voters and politicians in the registry" do
         
-        records = Records.new("V")
-        records.create_voter("Dr. Seuss", "Liberal")
-        records = Records.new("P")
-        records.create_politician("Joe Kennedy", "Democrat")
+        voters = Records.new("V")
+        voters.create_voter("Dr. Seuss", "Liberal")
+        politicians = Records.new("P")
+        politicians.create_politician("Joe Kennedy", "Democrat")
         
-#         Voter, Dr. Seuss, Liberal\n
-#         Politician, Joe Kennedy, Democrat\n
-        expected_result = "Voter, Dr. Seuss, Liberal\nPolitician, Joe Kennedy, Democrat\n"
-        expect(records.list).to eq(expected_result)
+        expected_result_voters = " Voter, Dr. Seuss, Liberal\n"
+        expected_result_politicians = " Politician, Joe Kennedy, Democrat\n"
+        expect(voters.list_voters).to eq(expected_result_voters)
+        expect(politicians.list_politicians).to eq(expected_result_politicians)
     end
 
     # 4. Test searching on voter by name.
@@ -79,35 +79,36 @@ describe Records do
         # search by first arg and update with 2nd and 3rd args
         records.update_voter("Dr. Seuss", "Jimmy John", "Neutral")
         
-        expect(record.voter_list[0].name).to eq("Jimmy John")
-        expect(record.voter_list[0].political_affiliation).to eq("Neutral")
+        expect(records.voter_list[0].name).to eq("Jimmy John")
+        expect(records.voter_list[0].political_affiliation).to eq("Neutral")
     end
 
     # 7. Test update of a politician.
-    it "can update a politician in the registry"
-        it "can update a politician" do 
-        records = Records.new("P")
+    it "can update a politician in the registry" do
+         records = Records.new("P")
         
         records.create_politician("John Doe", "Republican")
         records.create_politician("Lindsay Lohan", "Democrat")
         
         records.update_politician("John Doe", "James Bond", "Democrat")
         
-        expect(records.politicians[0].name).to eq("James Bond")
-        expect(records.politicians[0].registered_party).to eq("Democrat")
+        expect(records.politician_list[0].name).to eq("James Bond")
+        expect(records.politician_list[0].registered_party).to eq("Democrat")
     end
 
 
     # 8. Test deletion of a voter.
     it "can delete a voter from the registry" do
-        records  = Records.new("V")
-         records.create_voter("Dr. Seuss", "Liberal")
-         records.create_voter("Lindsay Lohan", "Socialist")
         
-        expect(records.voter_list.count).to eq(1)
-        records.delete_voter("Lindsay Lohan")
-        expect(record.search_voter("Lindsay Lohan")).to eq(nil)
+        records = Records.new("V")
 
+        records.create_voter("Dr. Seuss", "Liberal")
+        records.create_voter("Lindsay Lohan", "Socialist")
+        expect(records.voter_list.count).to eq(2)
+
+        records.delete_voter("Lindsay Lohan")
+        expect(records.voter_list.count).to eq(1)
+        expect(records.search_voter("Lindsay Lohan")).to eq(nil)
     end
   
     # 9. Test deletion of a politician.
@@ -117,12 +118,10 @@ describe Records do
         
         records.create_politician("John Doe", "Republican")
         records.create_politician("Lindsay Lohan", "Democrat")
-        
         expect(records.politician_list.count).to eq(2)
         
         records.delete_politician("Lindsay Lohan")
-        
-        expect(records.politicians.count).to eq(1)
+        expect(records.politician_list.count).to eq(1)
         expect(records.search_politician("Lindsay Lohan")).to eq(nil)
     end
     

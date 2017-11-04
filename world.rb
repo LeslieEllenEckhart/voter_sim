@@ -26,14 +26,9 @@ WorldVerbiage.greeting
 
 # Set-up for the lists by creating instances of both:
 politician_records, voter_records = WorldSetUp.voter_politician_arrays_init
-    
-# Load a "sample voter" and "sample politician" so arrays are not empty.
-politician_records.create_politician("Sample Politician", "Independent")
-voter_records.create_voter("Sample Voter", "Neutral")
 
 puts "As part of the registries set-up, we added sample members:"
-puts records.list.results
-# PrintLists.print_lists(politician_records.list, voter_records.voter_list)
+PrintLists.print_lists(politician_records, voter_records)
 
 simulation_loop = true
 simulation_loop_over = false
