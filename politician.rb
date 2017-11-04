@@ -19,22 +19,4 @@ class Politician < Person
             @registered_party = party
         end
     end
-       
-    def name 
-        name  = "#{@@name}"
-    end 
-    
-    def party
-        party = "#{@registered_party}"
-    end 
-    
-    def party_update(new_party)
-        if new_party == " "
-            raise ArgumentError
-        else
-            @registered_party = new_party
-            affiliation_update = "#{@party_affiliation}"
-        end
-    end 
-    
 end

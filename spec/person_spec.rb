@@ -12,15 +12,16 @@ describe Person do
       person = Person.new("Delaney")
       expect(person).to be_a(Person)
   end
-    
+  
+  it "can return its name" do
+      person = Person.new("Delaney")
+      expect(person.name).to eq("Delaney")
+  
+  end
+   
   it "can report its name" do
       person = Person.new("Delaney")
       expect(person.person_name).to eq("Person is named Delaney.")
   end
     
-#   it "can update its name" do
-#       person = Person.new("Delaney")
-#       expect(person.name_update("Maia")).to eq("Person is named Maia.")
-#   end    
-
 end

@@ -7,7 +7,7 @@
 require './politician.rb'
 
 describe Politician do
-    it "is created with a name and party affiliation" do
+    it "is created with a name and registered party affiliation" do
         politician = Politician.new("Joe Kennedy", "Democrat")
         expect(politician).to be_a(Politician)
     end
@@ -17,19 +17,8 @@ describe Politician do
         expect(politician.name).to eq("Joe Kennedy")
     end
     
-    it "can report its party affiliation" do
+    it "can report its registered party affiliation" do
         politician = Politician.new("Joe Kennedy", "Democrat")
-        expect(politician.party).to eq("Democrat")
-    end
-    
-    it "can update its party affiliation" do
-       politician = Politician.new("Joe Kennedy", "Democrat")
-       expect(politician.party_update("Green")).to eq("Green")
-    end    
-
-    it "can be added to the Local Registration List" do
-    end
-    
-    it "can be deleted from the Local Registration List" do
+        expect(politician.registered_party).to eq("Democrat")
     end
 end

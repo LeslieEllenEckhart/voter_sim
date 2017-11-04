@@ -3,7 +3,7 @@
 # Project-3: Voter Simulation
 # 
 # Person class object for voter simulation:
-#   > must be able to read and write person_name
+#   > must be able to create and return person_name
 # 
 class Person
     
@@ -16,20 +16,11 @@ class Person
            @name = name
         end
     end
-    
+        
     def person_name
         person_name = "Person is named #{@name}."
     end
-    
-    def name_update(new_name)
-        if new_name == " "
-            raise ArgumentError
-        else
-            @person_name = new_name
-            puts = "Person is named #{@name}."
-        end
-    end 
-    
+      
 end # end of Person class
 
 
