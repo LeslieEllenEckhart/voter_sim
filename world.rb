@@ -8,7 +8,7 @@ require './politician.rb'
 require './records.rb'
 
 require './world_setup.rb'
-require './print_lists.rb'
+# require './print_lists.rb'
 require './world_verbiage.rb'
 
 #
@@ -28,7 +28,7 @@ WorldVerbiage.greeting
 politician_records, voter_records = WorldSetUp.voter_politician_arrays_init
 
 puts "As part of the registries set-up, we added sample members:"
-PrintLists.print_lists(politician_records, voter_records)
+puts "#{politician_records.list_politicians} #{voter_records.list_voters}"
 
 simulation_loop = true
 simulation_loop_over = false
@@ -64,8 +64,13 @@ while simulation_loop == true and
     # prompt for choice_2:
     choice_2 = gets.chomp
 
-    if choice_2 != ("A" "a" "B" "b")
-      choice_2 = "A"
+    if ["A", "a", "B", "b"].include? choice_2
+    
+        
+    elsif if ["B", "b"].include? choice_2 
+
+    else
+        choice_2 = "A"
     end
 
     puts "You chose: #{choice_2}"
@@ -95,10 +100,8 @@ while simulation_loop == true and
                 v_politics = v_pol
         end
         #
-        voter = Voter.new(v_name, v_politics)
-        puts "Your voter is: #{voter.name} / #{voter.politics} of class: #{voter.class}"
-        voter_records.add_voter(voter)
-#         puts "Voter List is of class: #{voter_records.class}"
+        voter_records.create_voter(v_name, v_politics)
+   
         #
     else # Otherwise this is a politician
         puts "Please type the full name of the politician you wish to add:"
@@ -120,22 +123,20 @@ while simulation_loop == true and
                 p_party = p_pty
         end
         #
-        politician = Politician.new(p_name, p_party)
-        puts "Your politician is: #{politician.name} / #{politician.party} of class: #{politician.class}"
-        politician_records.add_politician(politician)
-#         puts "Politician List is of class: #{voter_records.class}"
+        politician_records.create_politician(p_name, p_party)
+        
     end # end choice_1
     
     puts " \n"
     puts "These are the CURRENT Politician and Voter registry contents:"
-    PrintLists.print_lists(politician_records.politician_list, voter_records.voter_list)
+    puts "#{politician_records.list_politicians} #{voter_records.list_voters}"
     puts " \n"
 
 end # end of simulation_loop
 
 puts "---------------------------------------------------------------"
 puts "These are the final Politician and Voter registry contents:"
-PrintLists.print_lists(politician_records.politician_list, voter_records.voter_list)
+puts "#{politician_records.list_politicians} #{voter_records.list_voters}"
 
 # PrintLists.print_lists(politician_records.politician_list, voter_records.voter_list)
 

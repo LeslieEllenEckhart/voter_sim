@@ -12,6 +12,7 @@ module WorldSetUp
      @list_type = "V"
 #    leon_voters = Records.new(@list_type).voter_list
      leon_voters = Records.new(@list_type)
+     
      @list_type = "P"
 #    leon_politicians = Records.new(@list_type).politician_list
      leon_politicians = Records.new(@list_type)

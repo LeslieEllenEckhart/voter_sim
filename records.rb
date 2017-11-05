@@ -16,7 +16,7 @@ class Records
              
     def initialize(list_type)
         @list_type = list_type
-        puts "This is the list_type: #{@list_type}"
+#         puts "This is the list_type: #{@list_type}"
         
         if !["V", "P"].include?(@list_type)
 #         if @list_type !== "V" and @list_type !== "P"

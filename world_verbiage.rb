@@ -1,8 +1,12 @@
 module WorldVerbiage
 
     def self.greeting
+        puts " \n"
+        puts "***************************************************************************"
         puts "Greetings Leon County Residents!"
         puts "Welcome to the Leon Voter and Politician Registries in the Sunshine!"
+        puts "***************************************************************************"
+        puts " \n"
         puts "You may perform basic functions on our Registries."
         puts " "
     end
@@ -16,6 +20,7 @@ module WorldVerbiage
     end
     
     def self.choice1_eq1
+        puts " \n"
         puts "The possible actions for Voters are:"
         puts "   A - Define a new Voter (name & political affiliation) to the Leon County Voter Registry"
         puts "   B - Update a Voter's information (name and/or political affiliation)"
@@ -24,6 +29,7 @@ module WorldVerbiage
     end
     
     def self.choice1_eq2
+        puts " \n"
         puts "The possible actions for Politicians are:"
         puts "   A - Define a new Politician (name and political party) to the Leon County Politician Registry"
         puts "   B - Update a Politician's information (name and/or political party)"
