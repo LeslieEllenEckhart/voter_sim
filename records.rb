@@ -45,7 +45,7 @@ class Records
         results = " "
         
         @voter_list.each { |voter|
-            results += "Voter, #{voter.name}, #{voter.political_affiliation}\n"
+            results += "Voter: #{voter.name}, #{voter.political_affiliation}\n"
             }
           
         return results
@@ -55,7 +55,7 @@ class Records
         results = " "
         
         @politician_list.each { |politician|
-            results += "Politician, #{politician.name}, #{politician.registered_party}\n"
+            results += "Politician : #{politician.name}, #{politician.registered_party}\n"
             }
         
         return results

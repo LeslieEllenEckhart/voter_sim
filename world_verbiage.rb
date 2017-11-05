@@ -23,7 +23,8 @@ module WorldVerbiage
         puts " \n"
         puts "The possible actions for Voters are:"
         puts "   A - Define a new Voter (name & political affiliation) to the Leon County Voter Registry"
-        puts "   B - Update a Voter's information (name and/or political affiliation)"
+        puts "   U - Update a Voter's information (name and/or political affiliation)"
+        puts "   D - Delete a Voter by name from the Voters Registry."
         puts "Note:  The default will be to add to the Voters Registry."
         puts "Please enter the letter for the action you wish to take."
     end
@@ -32,7 +33,8 @@ module WorldVerbiage
         puts " \n"
         puts "The possible actions for Politicians are:"
         puts "   A - Define a new Politician (name and political party) to the Leon County Politician Registry"
-        puts "   B - Update a Politician's information (name and/or political party)"
+        puts "   U - Update a Politician's information (name and/or political party)"
+        puts "   D - Delete a Politician by name from the Politicians Registry."
         puts "Note:  The default will be to add to the Politicians Registry."
         puts "Please enter the letter for the action you wish to take."
     end
